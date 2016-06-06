@@ -1,4 +1,7 @@
 #!/bin/bash
+#the code in this file concatenates the lines into single line and the second part of the code creates the table, i used the html tags 
+#create the table.The output is store in a html folder of the root directly of the csc department website,for this reason you can see the 
+#result in the link mentioned in ReadMe file.When you run this file send the output to a html file and see the results.
 
 i=0;
 cat $webformatted.html|while read line
