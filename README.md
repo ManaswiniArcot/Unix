@@ -15,16 +15,12 @@ http://www.csc.villanova.edu/~marcot/output.html
 Commands to run this project.
 Place all the files in same folder.
 
-./formatPage .html
+./FormatPage index1.html
 
 and then run 
 
-./cleanedoutput > output.html
+./FinalOutput > output.html
 
 #change the mode of the file.enabling to read by others.
 chmod 755 output.html
-
-
-
-
 
