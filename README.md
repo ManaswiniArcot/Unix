@@ -12,6 +12,19 @@ tabular format.Each record is added as each row in the table.A header text file 
 You can find the complete Unix shell scripting files for this project.You can the final output in this url
 http://www.csc.villanova.edu/~marcot/output.html
 
+Commands to run this project.
+Place all the files in same folder.
+
+./formatPage .html
+
+and then run 
+
+./cleanedoutput > output.html
+
+#change the mode of the file.enabling to read by others.
+chmod 755 output.html
+
+
 
 
 
