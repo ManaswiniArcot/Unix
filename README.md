@@ -13,14 +13,13 @@ You can find the complete Unix shell scripting files for this project.You can th
 http://www.csc.villanova.edu/~marcot/output.html
 
 Commands to run this project.
-Place all the files in same folder.
+Place all the files in same folder.The first file takes the command line argument as the input.Pass the source code of the webpage as
+the argument to the FormatPage.
 
 ./FormatPage index1.html
-
 and then run 
 
 ./FinalOutput > output.html
 
-#change the mode of the file.enabling to read by others.
+change the mode of the file,enabling it to read by others.
 chmod 755 output.html
-
