@@ -1,4 +1,6 @@
 #!/bin/bash
+#the code formats the page using the sed commands and translate commands .Removes the html tags and strips of the white spaces and
+#blank liness.
 cat $1 |sed '/<SCRIPT/,/<\/SCRIPT>/s/.*//' |
 tr "span" "SPAN" |
 tr "BR" "br" |
