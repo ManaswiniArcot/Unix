@@ -1,0 +1,39 @@
+#!/bin/bash
+
+i=0;
+cat $webformatted.html|while read line
+do
+if [ "$line" != "" ];then
+str=$str$line
+fi
+if [ "$line" == "" ];then
+echo $str
+str=""
+#echo $str
+fi
+done > $cleanedoutput.html
+
+cat << HTML_TOP
+<html>
+  <head>
+  <title>CSC  Department Information by Shell Script</title>
+  </head>
+  <body>
+  <h3>CSC CLASS SCHEDULE IN TABLE</h3>
+  <table border="2pt" BGCOLOR="#E0FF85">
+  <col style="background-color: #6374AB; color: #ffffff" />
+  <col span="2" style="background-color: #07B133; color: #E0FF85;" />
+HTML_TOP
+
+cat headertext.txt|awk '{ {FS=":"}printf("<tr>");
+for(i=1;i<=NF;i++) printf("<td><b>%s</b></td>",$i);
+printf("</tr>\n");}' 
+cat cleanedoutput.html|tr -s '\012'|awk '{ {FS=";"}printf("<tr>");
+for(i=2;i<=NF;i++)printf("<td>%s</td>",$i);
+printf("</tr>\n");}'
+cat << HTML_BOT
+  </table>
+  </body>
+</html>
+HTML_BOT
+

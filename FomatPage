@@ -1,0 +1,49 @@
+#!/bin/bash
+cat $1 |sed '/<SCRIPT/,/<\/SCRIPT>/s/.*//' |
+tr "span" "SPAN" |
+tr "BR" "br" |
+sed -e 's/<br>//g' |
+sed '/<CAPTION/,/<\/CAPTION>/s/.*//1' |
+#sed '/<SPAN/,/<\/SPAN>/s/.*//1' |
+sed  -e '/.*ST.*/,/<\/HTML>/s/.*//g' |
+tr "Tr" "TR"|
+sed 's/<TR>//g' | 
+sed '/<!/,/<!/s/.*//1' |
+sed -e 's/<TR>//g'  -e 's/<\/TR>//g' -e 's/<\/TD>//g' |
+sed '/<TD>/,/<\/A>/s/.*//1' |
+#sed '/^Mu/,/<A/s/.*//1' | 
+tr -s '\012'|
+sed 's/<.*">//1' | 
+sed 's/<\/A>/:/' |
+sed 's/">/\
+/' | 
+sed 's/<\/.*>/\
+/1' | tr -s '\012' | sed 's/<A/\
+@/1' |
+sed 's/<b>//' |
+sed '/^Re/,/>/s/.*//1' |
+sed '/^$/,/^H.*/s/.*//1' | 
+sed '/^@/,/^)/s/.*//1'|
+sed 's/<.*>//1' |
+sed 's/^ //' |
+tr -s '\012'|
+sed 's/^CSC/\
+;CSC/'|
+sed 's/^MSE/\
+;MSE/'|
+sed  's/(.*//g'|
+sed 's/^)//g'| 
+sed '/^Att.*/,/^$/s/.*/ /g'| 
+sed '/^Com.*/,/^$/s/.*/ /g'|
+sed 's/^LocAtioN:/;/g'| 
+sed 's/^DAyS:/;/1'|
+sed  's/^INStRuctoRS:/;/1'|
+sed 's/CRN:/;/'|
+sed 's/ENRollmeNt:/;/' |
+#tr -s '\012' |
+sed 's/TOP:/TOP /'|
+#sed '/^$/N;/\n$/N;//D'|
+sed 's/;CSC/\
+;CSC/' |
+sed 's/^:/;/'|sed 's/ :/;/'|
+tr -s ' ' > webformatted.html
