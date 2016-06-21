@@ -23,3 +23,7 @@ and then run
 
 change the mode of the file,enabling it to read by others.
 chmod 755 output.html
+
+Challenges faced
+
+wget command could not get the source code of the secured web page.i have to use another file with the source code as input and run the project.Any better ideas on grabbing the source code from a web page are appreciated.Thank you.
